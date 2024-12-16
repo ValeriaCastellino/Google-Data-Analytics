@@ -44,6 +44,9 @@ For the present analysis, I took into consideration data sets from November 2023
 
 For the purpose of this project, data is considered to be internal and it is structured in 13 fields as following:
 
+<details>
+<summary>Data description</summary>
+
 
 | **No.**|  **Variable**       |  **Description**                                        |
 |--------|------------------   | --------------------------------------------------------|
@@ -61,7 +64,95 @@ For the purpose of this project, data is considered to be internal and it is str
 | 12     | end_lng             | Longitude of ending station                             |                            
 | 13     | member_casual       | Type of membership of each rider                        |
 
+</details>
 
+
+<details>
+<summary>Data Schema</summary>
+
+
+| **Field**           | Type       |
+|---------------------|------------|
+| ride_id             | STRING     |
+| rideable_typeq      | STRING     |
+| started_at          | TIMESTAMP  |
+| ended_at            | TIMESTAMP  |
+| start_station_name  | STRING     |
+| start_station_id    | STRING     |
+| end_station_name    | STRING     |
+| end_station_id      | STRING     |
+| start_lat           | FLOAT      |
+| start_long          | FLOAT      |
+| end_lat             | FLOAT      |
+| end_long            | FLOAT      |
+| member_casual       | STRING     |
+
+</details>
+
+Riders' personal information was made unavailable for this analysis.
+
+Because the datasets used for this analysis were large, I used SQL to explore and clean the data. The environment was Google Big Query.
+
+Each table was imported into the Cyclistic dataset following the name convention: users_yearmonth (e.i: users_202311).
+
+I merged the 12 tables into one, with a total of 6,012,003 records, of which 532,455 records resulted in having NULL values for the start and end stations.
+
+## 3) Process
+
+The dataset counts more than  6,012,003 entries so I pick SQL to conduct my analysis on it.
+
+I chose Tableau for the visual rendering.
+
+Checked that data replication did not compromise data integrity: the sum of each of the 12 datasets matches the total entries for the 12 months from 11 2023 to October 2024.
+
+Data for the end station is largely missing but we have 1,083,523 null records about the start stations. Considering that our population is 5,788,839 distinct journeys, a sample of 4,705,316 records can lead to a 0.03% margin of error.
+
+Before analyzing the data, the dataset was cleaned by:
+
+- Checking for null values in the ride_id, rideable_type, and member_casual columns and none was found;
+- Removing the trips with null values in start and end stations;
+- Removing duplicate values (223,164 records were removed);
+- Testing data for consistency: date format, spelling mistakes, extra spaces.
+
+
+I had been keeping track of the cleaning process on a change log.
+
+I saved a table which contains distinct ride_ids, that hold no null values for start and end stations. The table contains 4,159,741 records and was named users_analysis_cleandata.
+
+From this dataset, I removed outliers (trips with a duration of less than 1 minute, or more than a day) and created three columns: trip duration in minutes, month and day of the week.
+
+The final tab I worked on, was of 4,045,952 records and 16 fields:
+
+<details>
+<summary>Data Schema</summary>
+
+
+| **Field**           | Type       |
+|---------------------|------------|
+| ride_id             | STRING     |
+| rideable_typeq      | STRING     |
+| started_at          | TIMESTAMP  |
+| ended_at            | TIMESTAMP  |
+| trip_duration_minute| INTEGER    |
+| month               | STRING     |
+| day_of_week         | STRING     |
+| start_station_name  | STRING     |
+| start_station_id    | STRING     |
+| end_station_name    | STRING     |
+| end_station_id      | STRING     |
+| start_lat           | FLOAT      |
+| start_long          | FLOAT      |
+| end_lat             | FLOAT      |
+| end_long            | FLOAT      |
+| member_casual       | STRING     |
+
+</details>
+
+## 4) Analysis
+
+The business question to answer to was: **How do annual members and casual riders use Cyclistic bikes differently?** 
+
+I sorted and filtered data for analysis in order to identify trends and patterns in how casual riders and members use Cyclistic’s service. The results for each query was saved and imported as .csv file on Tableau to be represented and shared.
 
 
 
