@@ -45,6 +45,21 @@ For the present analysis, I took into consideration data sets from November 2023
 For the purpose of this project, data is considered to be internal and it is structured in 13 fields as following:
 
 
+| **No.**|  **Variable**       |  **Description**                                        |
+|--------|------------------   | --------------------------------------------------------|
+| 1      | ride_id             | Unique ID assigned to each ride                         |
+| 2      | rideable_type       | classic, docked, or electric                            |
+| 3      | started_at          | Date and time at the start of trip                      |
+| 4      | ended_at            | Date and time at the end of trip                        |
+| 5      | start_station_name  | Name of the station where the ride journey started from |
+| 6      | start_station_id    | ID of the station where the ride journey started from   |
+| 7      | end_station_name    | Name of the station where the ride trip ended at        |
+| 8      | end_station_id      | ID of the station where the ride trip ended at          |
+| 9      | start_lat           | Latitude of starting station                            |
+| 10     | start_lng           | Longitude of starting station                           |
+| 11     | end_lat             | Latitude of ending station                              |
+| 12     | end_lng             | Longitude of ending station                             |                            
+| 13     | member_casual       | Type of membership of each rider                        |
 
 
 
