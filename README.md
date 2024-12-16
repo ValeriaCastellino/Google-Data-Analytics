@@ -31,7 +31,7 @@ I used Cyclistic’s historical trip data to analyze and identify trends for the
 
 Finally, I have to present my findings to Cyclistic executive team. This notoriously detail-oriented executive team will decide whether to approve the recommended marketing program. This team takes decisions at a very high level and will be interested in headlines. I can disclose details about my analysis in the appendix after the presentation.
 
-## 2) Prepare
+## :muscle: 2) Prepare
 
 **Data Source:** [divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html) <br>
 [Note: Data has been made available by Motivate International Inc. under this [<ins>license</ins>](https://www.divvybikes.com/data-license-agreement).]
@@ -97,7 +97,7 @@ Each table was imported into the Cyclistic dataset following the name convention
 
 I merged the 12 tables into one, with a total of 6,012,003 records, of which 532,455 records resulted in having NULL values for the start and end stations.
 
-## 3) Process
+## :rocket: 3) Process
 
 The dataset counts more than  6,012,003 entries so I pick SQL to conduct my analysis on it.
 
@@ -148,19 +148,64 @@ The final tab I worked on, was of 4,045,952 records and 16 fields:
 
 </details>
 
-## 4) Analysis
+## :brain: 4) Analysis
 
 The business question to answer to was: **How do annual members and casual riders use Cyclistic bikes differently?** 
 
 I sorted and filtered data for analysis in order to identify trends and patterns in how casual riders and members use Cyclistic’s service. The results for each query was saved and imported as .csv file on Tableau to be represented and shared.
 
+**Do the casual riders ride as much as members?**
+
+Our dataset counts 1483393 casuals' rides against 2562559 members' rides.
 
 
+![rides_per_cust_type](https://github.com/user-attachments/assets/d9034d53-a3d9-4b22-b918-9ac6ee4396bc)
 
 
+**What is the favorite rideable type for both,casual riders and members?**
+
+Both casual riders and members prefer classic bikes(954714 and 1696622)over electric bikes (503854 and 844887). The less favorite in both cases are electric scooters (24825 and 21050).
 
 
+![favorite_rideable](https://github.com/user-attachments/assets/f7f2fcd6-307c-46fd-8c31-9faa63aff3c1)
 
+
+**What is the average trip duration for casual riders and members?**
+
+Casual riders rent a bike for longer than members (24 minutes against 12).
+
+![trip_duration](https://github.com/user-attachments/assets/c8360e01-a5a8-4bb5-9bc8-5eddb171ae82)
+
+
+**Which months are the favorite for casual and members to ride?**
+
+Casual riders prefer to ride in July and August, when less favorite months seem to be December and February. Members dislike December and February the most too, but they prefer September and August for their rides.
+
+
+![monthly_trips](https://github.com/user-attachments/assets/556b4ed2-4a12-43b9-a77e-4806e3b01924)
+
+
+**What day of the week are casual riders and members most keen to a ride?**
+
+Casual riders need a bike especially on Saturday and Sunday (which suggest a leisure consume, against commuting), when members ride the most on Wednesdays and Thursday. Casual rides less favorite days for a ride are Tuesday and Monday. Members don't ride on Sunday and Saturday.
+
+![trips_day_of_week](https://github.com/user-attachments/assets/bf5b8366-0f75-440b-aed7-7fa1b504fda0)
+
+
+**Are there favorite hours for a ride?**
+
+Casual riders likely rent a bike in the afternoon hours. For members the use of bikes is spread over the all day.
+
+![trips_x_hour](https://github.com/user-attachments/assets/635ea11e-9106-40dc-b8dd-30e7d039891c)
+
+
+**How rides distribute over the week?**
+
+
+![trips_distribution_x_hour_over_week](https://github.com/user-attachments/assets/359a2a83-c855-4fe5-8edc-595ca3407f21)
+
+
+## 👀 5) Share
 
 
 
