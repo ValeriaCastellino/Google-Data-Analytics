@@ -207,6 +207,35 @@ Casual riders likely rent a bike in the afternoon hours. For members the use of 
 
 ## 👀 5) Share
 
+The present study on Cyclistics users will be used to address the marketing strategy. The goal is to convert casual riders into members.
+
+To facilitate the marketing director and the other stakeholders, I have summarized all the insight into a dashboard
+
+![cyclistics_user_analysis_dashboard](https://github.com/user-attachments/assets/dbb93c0f-fa04-4281-8b42-59d0f913f0c6)
+
+The present analysis confirms the trends of previous years.
+
+Casual users requested less rides but the ride for longer than members.
+As expected, rides went up in number over the good season from April to October. Although the best months for a ride seem to be July and August for casual members.
+
+The analysis confirms that casual riders still use Cyclistic for leisure rather than commuting.
+
+Both, casual riders and members, mostly need a ride in the peak hours of the working days. The distribution looks more uniform in the weekend, when central hours of the day are a good moment for a ride.
+
+
+## :fist_right: 6) Act
+
+According to the findings of present analysis a campaign addressed to casual members might leverage on their specific use of the service.
+
+A special price may be reserved for weekends, offering a by minute submission.
+
+For example, casual riders might be tempted to submit the service by a low subscription fee and a different amount corresponding to their needs of minutes riding per week/month.
+
+A marketing campaign should start in April.
+
+
+
+
 
 
 
