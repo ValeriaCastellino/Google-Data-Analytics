@@ -1,0 +1,153 @@
+-- Number of casual riders and members' rides
+
+
+
+
+SELECT COUNT (ride_id) AS number, member_casual
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY member_casual
+;
+-- We have 1483393 casuals' rides against 2562559 members' rides
+
+
+
+ --What is the favorite rideable type for both,casual riders and members?
+
+
+SELECT COUNT (rideable_type)AS total_rides_per_type,rideable_type, member_casual
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY rideable_type,member_casual
+ORDER BY total_rides_per_type DESC;
+
+
+-- Both casual riders and members prefer classic bikes(954714 and 1696622)over electric bikes (503854 and 844887). The less favorite in both cases are electric scooters (24825 and 21050)
+
+
+
+
+
+-- What is the average trip duration for casual riders and members?
+SELECT ROUND(AVG (trip_duration_minute),0) AS avg_tripduration,member_casual
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY member_casual
+;
+-- Casual riders rent a bike for longer than members (24 minutes against 12)
+
+
+-- Which months are the favorite for casual and members to ride?
+
+
+SELECT COUNT (month) AS rides_x_month, month, member_casual
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY month, member_casual
+ORDER BY rides_x_month DESC;
+
+
+-- Casual riders prefer to ride in July and August, when less favorite months seem to be December and February. Members dislike December and February the most too, but they prefer September and August for their rides.
+
+
+
+
+
+-- What day of the week are casual riders and members most keen to a ride?
+
+
+
+
+SELECT COUNT (day_of_week)AS rides_x_day,day_of_week, member_casual
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY day_of_week, member_casual
+ORDER BY rides_x_day DESC
+;
+--Casual riders need a bike especially on Saturday and Sunday (which suggest a leisure consume, against commuting), when members ride the most on Wednesdays and Thursday. Casual rides less favorite days for a ride are Tuesday and Monday. Members don't ride on Sunday and Saturday.
+
+
+
+
+
+
+-- Number of trips per hour
+
+
+SELECT member_casual,
+EXTRACT(HOUR FROM started_at) AS hour_of_day,
+COUNT(*) AS total_trips
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY member_casual,hour_of_day
+ORDER BY member_casual, total_trips DESC;
+
+
+-- Casual riders likely rent a bike in the afternoon hours. For members the use of bikes is spread over the all day.
+
+
+
+
+-- Hourly rides distribution over the week
+
+
+SELECT member_casual, day_of_week,
+EXTRACT(HOUR FROM started_at) AS hour_of_day,
+COUNT (*) AS rides_x_hour
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+GROUP BY member_casual, day_of_week, hour_of_day
+ORDER BY member_casual,day_of_week, rides_x_hour DESC;
+
+
+
+
+-- Starting location for casual riders
+
+
+SELECT member_casual, start_station_name,
+AVG(start_lat) AS start_lat,
+AVG(start_lng) AS start_lng,
+COUNT(*) AS total_rides
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+WHERE member_casual = 'casual'
+GROUP BY member_casual, start_station_name
+ORDER BY total_rides DESC;
+
+
+
+
+-- Ending location for casual
+
+
+SELECT member_casual, end_station_name,
+AVG(end_lat) AS end_lat,
+AVG(end_lng) AS end_lng,
+COUNT(*) AS total_rides
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+WHERE member_casual = 'casual'
+GROUP BY member_casual, end_station_name
+ORDER BY total_rides DESC;
+
+
+
+
+-- Starting location for members
+
+
+SELECT member_casual, start_station_name,
+AVG(start_lat) AS start_lat,
+AVG(start_lng) AS start_lng,
+COUNT(*) AS total_rides
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+WHERE member_casual = 'member'
+GROUP BY member_casual, start_station_name
+ORDER BY total_rides DESC;
+
+
+
+
+-- Ending location for members
+
+
+SELECT member_casual, end_station_name,
+AVG(end_lat) AS end_lat,
+AVG(end_lng) AS end_lng,
+COUNT(*) AS total_rides
+FROM `effective-reach-425916-a5.cyclistic_project.cyclistic_users_analysis`
+WHERE member_casual = 'member'
+GROUP BY member_casual, end_station_name
+ORDER BY total_rides DESC;
