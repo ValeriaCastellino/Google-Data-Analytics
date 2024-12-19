@@ -227,11 +227,14 @@ Both, casual riders and members, mostly need a ride in the peak hours of the wor
 
 According to the findings of present analysis a campaign addressed to casual members might leverage on their specific use of the service.
 
-A special price may be reserved for weekends, offering a by minute submission.
+A subscription campaign might start on February to create engage over the Spring time, and have active members during the peak team in July-August.
 
-For example, casual riders might be tempted to submit the service by a low subscription fee and a different amount corresponding to their needs of minutes riding per week/month.
+Casual members use Cyclistic for their leisure rides, and it might be appealing for them to share the account with a friend to ride with.
 
-A marketing campaign should start in April.
+An example for plans is showed on the below mock-up
+
+
+![Premium plans](https://github.com/user-attachments/assets/499687bb-647a-463f-a575-650da0412298)
 
 
 
