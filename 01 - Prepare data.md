@@ -1,0 +1,31 @@
+`** COMBINING ALL TABLES INTO ONE **`
+
+ `--I combined 12 tables (each for one month in the period between November 2023 and October 2024) into one.`  
+   
+ `` SELECT *   FROM `effective-reach-425916-a5.cyclistic_project.users_202311` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202312` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202401` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202402` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202403` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202404` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202405` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202406` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202407` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202408` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202409` ``  
+  `UNION ALL`  
+  `` SELECT * FROM `effective-reach-425916-a5.cyclistic_project.users_202410` ``  
+  `;`
+
+  `--The resulting data set was saved as user_analysis_202311_202410. The dataset counts 6,012,003 records in total.`
+
