@@ -1,4 +1,4 @@
-# Studying-Analytics
+# Google Data Analytics - Capestone project
 Cyclistic Bike Share Case Study
  
 ## Introduction to the project
